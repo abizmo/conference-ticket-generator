@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Title = "h1" | "h2" | "h3";
+
+interface Props extends HTMLAttributes<Title> {
+  class?: string;
+  as: Title;
+}
+
+const { as: Tag, class: className, ...rest } = Astro.props;
+---
+
+<Tag class:list={["title", className]} {...rest}><slot /></Tag>
+
+<style>
+  .title {
+    font-weight: var(--fw-4);
+    font-size: var(--fs-xl);
+    line-height: var(--lh-1);
+    letter-spacing: var(--ls-1);
+  }
+</style>

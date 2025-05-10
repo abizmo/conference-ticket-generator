@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 400 800; /* rango de peso */
+  font-stretch: 75% 125%; /* rango de anchura opcional */
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: var(--ff-primary, system-ui, sans-serif);
+}
+
+:root {
+  --clr-primary-500: 7 86 67;
+  --clr-gradient: 90deg, hsl(var(--clr-primary-500)), white;
+
+  --ff-primary: "Inconsolata";
+
+  --fs-base: 1.25rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2rem;
+
+  --fw-1: 400;
+  --fw-2: 500;
+  --fw-3: 700;
+  --fw-4: 800;
+
+  --lh-1: 1.1;
+  --lh-2: 1.2;
+
+  --ls-1: -0.03em;
+
+  @media (width >= 48rem) {
+    --fs-xl: 3.75rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: hsl(var(--clr-primary-500));
+}

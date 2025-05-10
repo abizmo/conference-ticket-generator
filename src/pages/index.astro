@@ -1,16 +1,28 @@
 ---
-
+import Highlight from "../components/highlight.astro";
+import Logo from "../components/logo.astro";
+import Text from "../components/text.astro";
+import Title from "../components/title.astro";
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Logo />
+    <Title as="h1">Your Journey to Coding Conf 2025 Starts Here!</Title>
+    <Title as="h1"
+      >Congrats, <Highlight>Jonatan Kristof!</Highlight>Your ticket is ready.</Title
+    >
+    <Text
+      >Secure your spot at next year’s <span class="text-primary">biggest</span>
+      coding conference.</Text
+    >
+  </body>
 </html>
