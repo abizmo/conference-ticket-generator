@@ -26,10 +26,23 @@ body {
   background-color: black;
   color: white;
   font-family: var(--ff-primary, system-ui, sans-serif);
+  line-height: var(--lh-2);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: var(--lh-1);
 }
 
 :root {
+  --clr-neutral-300: 252 6 83;
+  --clr-neutral-500: 245 15 58;
+  --clr-neutral-700: 245 19 35;
+  --clr-neutral-900: 248 70 10;
   --clr-primary-500: 7 86 67;
+  --clr-primary-700: 7 71 60;
   --clr-gradient: 90deg, hsl(var(--clr-primary-500)), white;
 
   --ff-primary: "Inconsolata";
@@ -47,6 +60,7 @@ body {
   --lh-2: 1.2;
 
   --ls-1: -0.03em;
+  --ls-2: -0.05em;
 
   @media (width >= 48rem) {
     --fs-xl: 3.75rem;
