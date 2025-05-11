@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from "preact/compat";
 import { useState } from "preact/hooks";
 
-import { extractFieldErrors } from "../schemas/ticket-schema";
+import { validateFields } from "../schemas/ticket-schema";
 import DropInput from "./drop-input";
 import FormControl from "./form-control";
 import FormLabel from "./form-label";
@@ -23,15 +23,15 @@ export default function Form({ children }: PropsWithChildren) {
   const handleSubmit = (e: Event) => {
     e.preventDefault();
 
-    const extractedErrors = extractFieldErrors(fields);
+    const result = validateFields(fields);
 
-    if (extractedErrors !== null) {
-      setErrors(extractedErrors);
+    if (!result.success) {
+      setErrors(result.errors as FieldErrors);
       return;
     }
 
     // ✅ archivo válido
-    console.log("Archivo válido:", fields.file);
+    console.log("Archivo válido:", result.data?.file);
 
     // Aquí podrías subir el archivo con fetch o FormData
   };
