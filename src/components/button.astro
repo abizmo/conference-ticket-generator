@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"button"> {}
+
+const { type = "submit" } = Astro.props;
+---
+
+<button type={type}><slot /></button>
+
+<style>
+  button {
+    text-transform: capitalize;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-3);
+    line-height: var(--lh-1);
+    letter-spacing: var(--ls-0);
+    color: hsl(var(--clr-neutral-900));
+    background-color: hsl(var(--clr-primary-500));
+
+    padding: 1rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    border-color: transparent;
+
+    transition:
+      background-color 200ms ease-in,
+      box-shadow 200ms ease-in;
+
+    &:focus,
+    &:focus-visible {
+      border-color: black;
+      outline: 2px solid white;
+    }
+
+    &:hover {
+      background-color: hsl(var(--clr-primary-700));
+      box-shadow: 0px 4px 0px hsl(var(--clr-primary-500));
+    }
+  }
+</style>

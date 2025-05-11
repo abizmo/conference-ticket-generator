@@ -1,4 +1,6 @@
 ---
+import Button from "../components/button.astro";
+import Form from "../components/form";
 import Highlight from "../components/highlight.astro";
 import Logo from "../components/logo.astro";
 import Text from "../components/text.astro";
@@ -26,5 +28,8 @@ import "../styles/global.css";
       coding conference.</Text
     >
     <Ticket />
+    <Form client:load>
+      <Button>Generate my ticket</Button>
+    </Form>
   </body>
 </html>
