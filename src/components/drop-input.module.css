@@ -14,15 +14,15 @@
   line-height: var(--lh-2);
 
   text-align: center;
-}
 
-.dropInput:hover {
-  background-color: hsla(0, 0%, 100%, 0.24);
-}
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.24);
+  }
 
-.dropInput:focus-within {
-  outline: 2px solid black;
-  box-shadow: 0 0 0 4px white;
+  &:focus-within {
+    outline: 2px solid black;
+    box-shadow: 0 0 0 4px white;
+  }
 }
 
 .previewBox {

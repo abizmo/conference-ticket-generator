@@ -40,7 +40,8 @@ p {
   margin: 0;
 }
 
-button {
+button,
+input {
   font: inherit;
 }
 
