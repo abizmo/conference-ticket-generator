@@ -84,3 +84,11 @@ input {
 .text-primary {
   color: hsl(var(--clr-primary-500));
 }
+
+.container {
+  --max-width: 50rem;
+  --padding-inline: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding-inline) * 2));
+  margin-inline: auto;
+}

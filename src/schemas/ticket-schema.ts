@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z, ZodError } from "zod";
 
 const schema = z.object({
   file: z
@@ -23,12 +23,8 @@ export type TicketSchema = Partial<z.infer<typeof schema>>;
 export type Key = keyof TicketSchema;
 export type FieldErrors = Partial<Record<keyof TicketSchema, string>>;
 
-export function extractFieldErrors(fields: TicketSchema) {
-  const result = schema.safeParse(fields);
-
-  if (result.success) return null;
-
-  const formatted = result.error.format();
+function extractErrors(error: ZodError<FieldErrors>) {
+  const formatted = error.format();
 
   const extractedErrors = Object.entries(formatted).reduce(
     (acc, [key, value]) => {
@@ -46,4 +42,21 @@ export function extractFieldErrors(fields: TicketSchema) {
   );
 
   return extractedErrors;
+}
+
+export function validateFields(fields: TicketSchema) {
+  const result = schema.safeParse(fields);
+
+  if (result.success)
+    return {
+      success: true,
+      data: result.data,
+    };
+
+  const extractedErrors = extractErrors(result.error);
+
+  return {
+    success: false,
+    errors: extractedErrors,
+  };
 }

@@ -1,10 +1,8 @@
 ---
 import Button from "../components/button.astro";
 import Form from "../components/form";
-import Highlight from "../components/highlight.astro";
 import Logo from "../components/logo.astro";
 import Text from "../components/text.astro";
-import Ticket from "../components/ticket.astro";
 import Title from "../components/title.astro";
 import "../styles/global.css";
 ---
@@ -18,18 +16,55 @@ import "../styles/global.css";
     <title>Astro</title>
   </head>
   <body>
-    <Logo />
-    <Title as="h1">Your Journey to Coding Conf 2025 Starts Here!</Title>
-    <Title as="h1"
-      >Congrats, <Highlight>Jonatan Kristof!</Highlight>Your ticket is ready.</Title
-    >
-    <Text
-      >Secure your spot at next year’s <span class="text-primary">biggest</span>
-      coding conference.</Text
-    >
-    <Ticket />
-    <Form client:load>
-      <Button>Generate my ticket</Button>
-    </Form>
+    <header class="header | text-center">
+      <Logo />
+    </header>
+    <main class="main">
+      <div class="hero-container container text-center">
+        <Title as="h1">Your Journey to Coding Conf 2025 Starts Here!</Title>
+        <Text>Secure your spot at next year’s biggest coding conference.</Text>
+      </div>
+      <div class="container form-container">
+        <Form client:load>
+          <Button>Generate my ticket</Button>
+        </Form>
+      </div>
+    </main>
   </body>
 </html>
+
+<style>
+  .header {
+    padding-block: 2rem;
+
+    @media (width >= 48rem) {
+      padding-block: 2.5rem;
+    }
+  }
+
+  @media (width >= 48rem) {
+    .main {
+      margin-top: 2rem;
+    }
+  }
+
+  .form-container {
+    --max-width: 28rem;
+  }
+
+  .hero-container {
+    margin-bottom: 2.5rem;
+
+    @media (width >= 48rem) {
+      margin-bottom: 3rem;
+    }
+
+    & > *:first-child {
+      margin-bottom: 1.5rem;
+
+      @media (width >= 48rem) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+</style>
