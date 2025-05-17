@@ -12,7 +12,7 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class="bg-decoration">
     <header class="header | text-center">
       <Logo />
     </header>
@@ -34,6 +34,20 @@ import "../styles/global.css";
   @media (width >= 48rem) {
     .main {
       margin-top: 2rem;
+    }
+  }
+
+  .bg-decoration {
+    background-image: url("/background-mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media (width > 28rem) {
+      background-image: url("/background-tablet.png");
+    }
+
+    @media (width > 48rem) {
+      background-image: url("/background-desktop.png");
     }
   }
 </style>

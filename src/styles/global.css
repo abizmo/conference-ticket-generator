@@ -27,6 +27,7 @@ body {
   color: white;
   font-family: var(--ff-primary, system-ui, sans-serif);
   line-height: var(--lh-2);
+  min-height: 100dvh;
 }
 
 h1,
@@ -100,7 +101,7 @@ input {
 .mb-xl {
   margin-block-end: 4rem;
 
-  @media (width > 48rem) {
+  @media (width >= 48rem) {
     margin-block-end: 6rem;
   }
 }
