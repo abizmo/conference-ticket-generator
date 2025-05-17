@@ -1,0 +1,39 @@
+---
+import Logo from "../components/logo.astro";
+
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <header class="header | text-center">
+      <Logo />
+    </header>
+    <main class="main">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  .header {
+    padding-block: 2rem;
+
+    @media (width >= 48rem) {
+      padding-block: 2.5rem;
+    }
+  }
+
+  @media (width >= 48rem) {
+    .main {
+      margin-top: 2rem;
+    }
+  }
+</style>

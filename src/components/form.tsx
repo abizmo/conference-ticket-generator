@@ -20,7 +20,7 @@ export default function Form({ children }: PropsWithChildren) {
     setErrors((errors) => ({ ...errors, file: undefined }));
   };
 
-  const handleSubmit = (e: Event) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const result = validateFields(fields);
@@ -30,10 +30,22 @@ export default function Form({ children }: PropsWithChildren) {
       return;
     }
 
-    // ✅ archivo válido
-    console.log("Archivo válido:", result.data?.file);
+    const data = new FormData();
+    data.append("fullName", fields.fullName as string);
+    data.append("email", fields.email as string);
+    data.append("ghUsername", fields.ghUsername as string);
+    data.append("file", fields.file as Blob);
 
-    // Aquí podrías subir el archivo con fetch o FormData
+    const res = await fetch("/api/submit", {
+      method: "POST",
+      body: data,
+    });
+
+    if (res.ok) {
+      setTimeout(() => (window.location.href = "/success"), 300);
+    } else {
+      alert("Error en el envío");
+    }
   };
 
   const handleInput = (key: Key, value: string) => {

@@ -20,6 +20,9 @@ importers:
       preact:
         specifier: ^10.26.6
         version: 10.26.6
+      zod:
+        specifier: ^3.24.4
+        version: 3.24.4
     devDependencies:
       '@typescript-eslint/parser':
         specifier: ^8.32.0

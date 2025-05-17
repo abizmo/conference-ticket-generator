@@ -1,0 +1,35 @@
+---
+import Highlight from "../components/highlight.astro";
+import Text from "../components/text.astro";
+import Ticket from "../components/ticket.astro";
+import Title from "../components/title.astro";
+import Root from "../layouts/root.astro";
+
+const fullName = Astro.cookies.get("fullName")?.value ?? "";
+const email = Astro.cookies.get("email")?.value ?? "";
+const ghUsername = Astro.cookies.get("ghUsername")?.value ?? "";
+const fileName = Astro.cookies.get("fileName")?.value ?? "";
+const ticketId = Astro.cookies.get("ticketId")?.value ?? "";
+---
+
+<Root>
+  <div class="hero-container container text-center">
+    <Title as="h1"
+      >Congrats, <Highlight>{fullName}!</Highlight> Your ticket is ready.</Title
+    >
+  </div>
+  <div class="container form-container text-center">
+    <Text
+      >We've emailed your ticket to <b>{email}</b> and will be send updates in the
+      run up to the event.</Text
+    >
+  </div>
+  <Ticket
+    id={ticketId}
+    name={fullName}
+    ghUser={ghUsername}
+    avatar={`/uploads/${fileName}`}
+  />
+</Root>
+
+<style></style>
