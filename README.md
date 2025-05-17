@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: []()
-- Live Site URL: []()
+- Solution URL: [https://github.com/abizmo/conference-ticket-generator](https://github.com/abizmo/conference-ticket-generator)
+- Live Site URL: [https://conference-ticket-generator-zeta-six.vercel.app/](https://conference-ticket-generator-zeta-six.vercel.app/)
 
 ## My process
 

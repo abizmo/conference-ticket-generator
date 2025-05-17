@@ -8,7 +8,7 @@ import Root from "../layouts/root.astro";
 const fullName = Astro.cookies.get("fullName")?.value ?? "";
 const email = Astro.cookies.get("email")?.value ?? "";
 const ghUsername = Astro.cookies.get("ghUsername")?.value ?? "";
-const fileName = Astro.cookies.get("fileName")?.value ?? "";
+const fileUrl = Astro.cookies.get("fileUrl")?.value ?? "";
 const ticketId = Astro.cookies.get("ticketId")?.value ?? "";
 ---
 
@@ -29,7 +29,7 @@ const ticketId = Astro.cookies.get("ticketId")?.value ?? "";
       id={ticketId}
       name={fullName}
       ghUser={ghUsername}
-      avatar={`/uploads/${fileName}`}
+      avatar={fileUrl}
     />
   </div>
 </Root>
