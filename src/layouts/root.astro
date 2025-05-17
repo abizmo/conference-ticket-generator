@@ -38,25 +38,38 @@ import "../styles/global.css";
   }
 
   .bg-decoration {
-    --bg-image: url("/background-mobile.png");
-    --bg-size: 50%;
-    --bg-position: top right;
+    --bg-1-size: 50%;
+    --bg-1-position: top right;
+    --bg-2-image: url("/pattern-squiggly-line-bottom-mobile-tablet.svg");
+    --bg-2-size: 100%;
+    --bg-4-position: center right -110px;
+    --bg-5-image: url("/background-mobile.png");
+
     background-color: black;
     background-image:
-      url("/pattern-squiggly-line-top.svg"), url("/pattern-lines.svg"),
-      var(--bg-image);
-    background-size: var(--bg-size), cover, cover;
-    background-position: var(--bg-position), top, top;
-    background-repeat: no-repeat, no-repeat, no-repeat;
+      url("/pattern-squiggly-line-top.svg"), var(--bg-2-image),
+      url("/pattern-lines.svg"), url("/pattern-circle.svg"), var(--bg-5-image);
+    background-size: var(--bg-1-size), var(--bg-2-size), cover, auto, cover;
+    background-position:
+      var(--bg-1-position),
+      bottom left,
+      top,
+      var(--bg-4-position),
+      top;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 
     @media (width > 28rem) {
-      --bg-image: url("/background-tablet.png");
+      --bg-2-size: 60%;
+      --bg-5-image: url("/background-tablet.png");
     }
 
     @media (width > 48rem) {
-      --bg-image: url("/background-desktop.png");
-      --bg-size: 40%;
-      --bg-position: top 5rem right;
+      --bg-1-size: 40%;
+      --bg-1-position: top 5rem right;
+      --bg-2-image: url("/pattern-squiggly-line-bottom-desktop.svg");
+      --bg-2-size: 50%;
+      --bg-5-image: url("/background-desktop.png");
+      --bg-4-position: center left 75%;
     }
   }
 </style>
