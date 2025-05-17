@@ -38,16 +38,18 @@ import "../styles/global.css";
   }
 
   .bg-decoration {
-    background-image: url("/background-mobile.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    --bg-image: url("/background-mobile.png");
+    /* background-color: black; */
+    background-image: url("/pattern-lines.svg"), var(--bg-image);
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
 
     @media (width > 28rem) {
-      background-image: url("/background-tablet.png");
+      --bg-image: url("/background-tablet.png");
     }
 
     @media (width > 48rem) {
-      background-image: url("/background-desktop.png");
+      --bg-image: url("/background-desktop.png");
     }
   }
 </style>
