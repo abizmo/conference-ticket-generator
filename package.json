@@ -12,7 +12,8 @@
     "@astrojs/preact": "^4.0.11",
     "@astrojs/vercel": "^8.1.4",
     "astro": "^5.7.12",
-    "preact": "^10.26.6"
+    "preact": "^10.26.6",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.32.0",

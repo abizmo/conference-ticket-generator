@@ -1,0 +1,6 @@
+.formLabel {
+  font-weight: var(--fw-2);
+  font-size: var(--fs-base);
+  line-height: var(--lh-1);
+  letter-spacing: var(--ls-1);
+}

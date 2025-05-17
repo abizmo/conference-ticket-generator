@@ -27,6 +27,7 @@ body {
   color: white;
   font-family: var(--ff-primary, system-ui, sans-serif);
   line-height: var(--lh-2);
+  min-height: 100dvh;
 }
 
 h1,
@@ -34,6 +35,15 @@ h2,
 h3 {
   margin: 0;
   line-height: var(--lh-1);
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
 }
 
 :root {
@@ -47,9 +57,13 @@ h3 {
 
   --ff-primary: "Inconsolata";
 
-  --fs-base: 1.25rem;
-  --fs-lg: 1.5rem;
+  --fs-3xl: 3.75rem;
+  --fs-2xl: 2.375rem;
   --fs-xl: 2rem;
+  --fs-lg: 1.5rem;
+  --fs-base: 1.25rem;
+  --fs-md: 0.875rem;
+  --fs-sm: 0.75rem;
 
   --fw-1: 400;
   --fw-2: 500;
@@ -59,12 +73,9 @@ h3 {
   --lh-1: 1.1;
   --lh-2: 1.2;
 
+  --ls-0: -0.015em;
   --ls-1: -0.03em;
   --ls-2: -0.05em;
-
-  @media (width >= 48rem) {
-    --fs-xl: 3.75rem;
-  }
 }
 
 .text-center {
@@ -73,4 +84,24 @@ h3 {
 
 .text-primary {
   color: hsl(var(--clr-primary-500));
+}
+
+.container {
+  --max-width: 50rem;
+  --padding-inline: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding-inline) * 2));
+  margin-inline: auto;
+}
+
+.narrow-container {
+  --max-width: 32rem;
+}
+
+.mb-xl {
+  margin-block-end: 4rem;
+
+  @media (width >= 48rem) {
+    margin-block-end: 6rem;
+  }
 }

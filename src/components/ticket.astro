@@ -1,6 +1,8 @@
 ---
 import IconGithub from "../assets/icon-github.svg";
 import LogoMark from "../assets/logo-mark.svg";
+
+const { name, ghUser, avatar, id } = Astro.props;
 ---
 
 <div class="ticket-wrapper">
@@ -14,16 +16,16 @@ import LogoMark from "../assets/logo-mark.svg";
       </div>
     </header>
     <main class="person">
-      <img class="avatar" src="/image-avatar.jpg" alt="name" />
+      <img class="avatar" src={avatar} alt={name} />
       <div>
-        <span class="person__name">Jonatan Kristof</span>
+        <span class="person__name">{name}</span>
         <div class="github">
           <IconGithub class="github__icon" />
-          <span class="github__user">@jonatankristof0101</span>
+          <span class="github__user">{ghUser}</span>
         </div>
       </div>
     </main>
-    <aside class="ticket-number"><span>#01609</span></aside>
+    <aside class="ticket-number"><span>#{id}</span></aside>
   </div>
 </div>
 
@@ -74,24 +76,24 @@ import LogoMark from "../assets/logo-mark.svg";
   }
 
   .event__name {
-    font-size: 22px;
+    font-size: var(--fs-lg);
     font-weight: var(--fw-3);
     line-height: 0.8;
     margin-block-end: 1rem;
 
     @media (width >= 48rem) {
-      font-size: 38px;
+      font-size: var(--fs-2xl);
       margin-block-end: 1.5rem;
     }
   }
 
   .event__details {
-    font-size: 14px;
+    font-size: var(--fs-md);
     font-weight: var(--fw-1);
     color: hsl(var(--clr-neutral-300));
 
     @media (width >= 48rem) {
-      font-size: 19px;
+      font-size: var(--fs-base);
     }
   }
 
@@ -118,7 +120,7 @@ import LogoMark from "../assets/logo-mark.svg";
     margin-block-end: 0.25rem;
 
     @media (width >= 48rem) {
-      font-size: 2rem;
+      font-size: var(--f-xl);
       margin-block-end: 0.5rem;
     }
   }
@@ -138,11 +140,11 @@ import LogoMark from "../assets/logo-mark.svg";
   }
 
   .github__user {
-    font-size: 0.875rem;
+    font-size: var(--fs-md);
     color: hsl(var(--clr-neutral-300));
 
     @media (width >= 48rem) {
-      font-size: 1.25rem;
+      font-size: var(--fs-base);
     }
   }
 
@@ -159,7 +161,7 @@ import LogoMark from "../assets/logo-mark.svg";
     }
 
     @media (width >= 48rem) {
-      font-size: 30px;
+      font-size: var(--fs-xl);
     }
   }
 </style>

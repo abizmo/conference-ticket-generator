@@ -1,0 +1,25 @@
+.input {
+  padding: 1rem;
+  background-color: hsl(var(--clr-neutral-300) / 0.12);
+  border: 1px solid hsl(var(--clr-neutral-300) / 0.5);
+  border-radius: 0.75rem;
+  color: hsl(var(--clr-neutral-300));
+  font-size: var(--fs-base);
+  line-height: var(--lh-2);
+
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: hsl(var(--clr-neutral-300) / 0.24);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid black;
+    box-shadow: 0 0 0 4px white;
+  }
+
+  &.error {
+    border-color: hsl(var(--clr-primary-700));
+  }
+}

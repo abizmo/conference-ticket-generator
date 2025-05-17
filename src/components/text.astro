@@ -1,17 +1,24 @@
 ---
-
+const { class: classname, ...rest } = Astro.props;
 ---
 
-<p><slot /></p>
+<p class:list={["text", classname]}><slot /></p>
 
 <style>
-  p {
+  .text {
     font-weight: var(--fw-1);
     font-size: var(--fs-base);
+    line-height: var(--lh-2);
     letter-spacing: var(--ls-1);
+    text-wrap: balance;
 
     @media (width >= 48rem) {
       font-size: var(--fs-lg);
+    }
+
+    & :global(b) {
+      font-weight: inherit;
+      color: hsl(var(--clr-primary-500));
     }
   }
 </style>
