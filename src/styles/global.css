@@ -92,3 +92,15 @@ input {
   width: min(var(--max-width), 100% - (var(--padding-inline) * 2));
   margin-inline: auto;
 }
+
+.narrow-container {
+  --max-width: 32rem;
+}
+
+.mb-xl {
+  margin-block-end: 4rem;
+
+  @media (width > 48rem) {
+    margin-block-end: 6rem;
+  }
+}
