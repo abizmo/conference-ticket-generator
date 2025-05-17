@@ -39,10 +39,15 @@ import "../styles/global.css";
 
   .bg-decoration {
     --bg-image: url("/background-mobile.png");
-    /* background-color: black; */
-    background-image: url("/pattern-lines.svg"), var(--bg-image);
-    background-size: cover, cover;
-    background-repeat: no-repeat, no-repeat;
+    --bg-size: 50%;
+    --bg-position: top right;
+    background-color: black;
+    background-image:
+      url("/pattern-squiggly-line-top.svg"), url("/pattern-lines.svg"),
+      var(--bg-image);
+    background-size: var(--bg-size), cover, cover;
+    background-position: var(--bg-position), top, top;
+    background-repeat: no-repeat, no-repeat, no-repeat;
 
     @media (width > 28rem) {
       --bg-image: url("/background-tablet.png");
@@ -50,6 +55,8 @@ import "../styles/global.css";
 
     @media (width > 48rem) {
       --bg-image: url("/background-desktop.png");
+      --bg-size: 40%;
+      --bg-position: top 5rem right;
     }
   }
 </style>
